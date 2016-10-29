@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "EnsurePackage<-function(x)\n{\n  x<-as.character(x)\n  if(!require(x,character.only = TRUE))\n  {\n    install.packages(pkgs=x,repos = \"http://cran.r-project.org\")\n    require(x,character.only = TRUE)\n  }\n}\n\nPrepareTwitter<-function()\n{\n  EnsurePackage(\"bitops\")\n  EnsurePackage(\"RCurl\")\n  EnsurePackage(\"RJSONIO\")\n  EnsurePackage(\"twitteR\")\n}\n\n#TweetFrame()-Return a dataframe based on a search of Twitter\nTweetFrame<-function(searchTerm,maxTweets)\n{\n  twtList<-searchTwitter(searchTerm,n=maxTweets)\n  #as.data.frame() coerces each list element into a row\n  #lapply() applies this to all of the elements in twtList\n  #rbind() takes all of the rows and put them together\n  #do.call() gives rbind() all the rows as individual elements\n  ##\n  return(do.call(\"rbind\",lapply(twtList,as.data.frame)))\n}",
+    "created" : 1473912796447.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1444457041",
+    "id" : "72C0421D",
+    "lastKnownWriteTime" : 1477369357,
+    "last_content_update" : 1477369357004,
+    "path" : "~/2.0 Eng_2012/Reference material/Data_Science/R-Pjs/twitter/twitProj.R",
+    "project_path" : "twitProj.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

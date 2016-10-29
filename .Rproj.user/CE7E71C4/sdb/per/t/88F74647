@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "MyMode<-function(myVector)\n{\n  uniqueValues<-unique(myVector)\n  uniqueCounts<-tabulate(match(myVector,uniqueValues))\n  return(uniqueValues[which.max(uniqueCounts)])\n}\n\nMySamplingDistribution<-function(myvector,nTime,nSize)\n{\n  hist(replicate(nTime,mean(sample(myvector,size=nSize,replace=TRUE)),simplify = TRUE))\n  #return(mean(sample(myvector,size=nSize,replace=TRUE)))\n  #return(sample(myvector,size=nSize,replace = TRUE))\n}\n\n#Like ArrivaProbability, but works with unsorted list of delay times\nDelayProbability<-function(delays,increment,max)\n{\n  #Initialize empty vector\n  plist<-NULL\n  #Probability is defined over the size of this sample of arrival times\n  delayLen<-length(delays)\n  #May not be necessary, nut checks for input mistake\n  if (increment>max) {return(NULL)}\n  \n  for (i in seq(increment,max,by=increment))\n    (\n      #logical test <=i provides list of TRUEs and FALSEs of lenght = timeLen, then sum() counts the TRUEs\n      plist<-c(plist,(sum(delays<=i)/delayLen))\n    )\n  return(plist)\n}",
+    "created" : 1474696317568.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4021241471",
+    "id" : "88F74647",
+    "lastKnownWriteTime" : 1475814794,
+    "last_content_update" : 0,
+    "path" : "~/2.0 Eng_2012/Reference material/Data_Science/rStudio-DatascienceBook1.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

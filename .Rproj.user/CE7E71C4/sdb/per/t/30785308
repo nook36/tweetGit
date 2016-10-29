@@ -1,0 +1,28 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1476971861987.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "30785308",
+    "lastKnownWriteTime" : 7011605692497750387,
+    "last_content_update" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "kgtldc66lq",
+        "caption" : "tweetDF",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=tweetDF&cache_key=kgtldc66lq",
+        "displayedObservations" : 100,
+        "environment" : "",
+        "object" : "tweetDF",
+        "totalObservations" : 100,
+        "variables" : 16
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
